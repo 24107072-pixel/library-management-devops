@@ -1,0 +1,7 @@
+services:
+  library-app:
+    build: .
+    container_name: library-management-app
+    ports:
+      - "8081:80"
+    restart: unless-stopped

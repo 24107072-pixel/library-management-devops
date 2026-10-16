@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">▤</span><div><strong>Libra</strong><small>LIBRARY SYSTEM</small></div></div>
+    <nav>
+      <a class="active" href="#dashboard"><span>▦</span> Dashboard</a>
+      <a href="#students"><span>♙</span> Students</a>
+      <a href="#logins"><span>↗</span> Login Activity</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="avatar">LA</div><div><strong>Library Admin</strong><small>Administrator</small></div>
+    </div>
+  </aside>
+
+  <main class="main" id="dashboard">
+    <header class="topbar">
+      <div><p class="eyebrow">LIBRARY OVERVIEW</p><h1>Dashboard</h1><p class="muted">Welcome back! Here's what's happening in your library.</p></div>
+      <div class="date-pill"><span class="status-dot"></span> System overview <span id="today"></span></div>
+    </header>
+
+    <section class="welcome">
+      <div><p class="eyebrow light">LIBRARY MANAGEMENT SYSTEM</p><h2>Knowledge starts here.</h2><p>Keep track of student access and daily library activity from one simple dashboard.</p></div>
+      <div class="book-art" aria-hidden="true"><div class="book book-one"></div><div class="book book-two"></div><div class="book book-three"></div><div class="plant">✦</div></div>
+    </section>
+
+    <section class="stats" aria-label="Library statistics">
+      <article class="stat-card">
+        <div class="stat-top"><span class="stat-icon purple">↗</span><span class="tag">Today</span></div>
+        <p class="stat-label">Total Logins</p><div class="stat-value" id="totalLogins">128</div><p class="stat-note"><span class="trend">↑ 12%</span> vs. yesterday</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top"><span class="stat-icon blue">♙</span><span class="tag">Registered</span></div>
+        <p class="stat-label">Total Students</p><div class="stat-value" id="totalStudents">542</div><p class="stat-note">Student accounts</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top"><span class="stat-icon green">●</span><span class="tag live-tag"><i></i> Live demo</span></div>
+        <p class="stat-label">Active Sessions</p><div class="stat-value" id="activeSessions">18</div><p class="stat-note">Currently signed in (demo)</p>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top"><span class="stat-icon orange">◷</span><span class="tag">This week</span></div>
+        <p class="stat-label">New Students</p><div class="stat-value" id="newStudents">24</div><p class="stat-note">Recently registered</p>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel activity-panel" id="logins">
+        <div class="panel-heading"><div><h3>Login Activity</h3><p class="muted">Recent student access events</p></div><span class="subtle-pill">Last 7 entries</span></div>
+        <div class="table-wrap">
+          <table><thead><tr><th>STUDENT</th><th>STUDENT ID</th><th>LOGIN TIME</th><th>STATUS</th></tr></thead>
+            <tbody id="loginRows"></tbody>
+          </table>
+        </div>
+        <div class="panel-footer"><span class="muted">Sample data for demonstration</span><button class="text-button" id="refreshBtn">↻ Refresh activity</button></div>
+      </article>
+      <article class="panel students-panel" id="students">
+        <div class="panel-heading"><div><h3>Student Overview</h3><p class="muted">Account summary</p></div><span class="round-icon">♙</span></div>
+        <div class="student-total"><strong id="studentTotalSide">542</strong><span>registered students</span></div>
+        <div class="progress-label"><span>Active accounts</span><strong>86%</strong></div><div class="progress"><span style="width:86%"></span></div>
+        <div class="progress-label"><span>New this month</span><strong>9%</strong></div><div class="progress"><span class="progress-blue" style="width:9%"></span></div>
+        <div class="mini-stats"><div><span class="mini-dot green-dot"></span><div><strong>466</strong><small>Active</small></div></div><div><span class="mini-dot gray-dot"></span><div><strong>76</strong><small>Inactive</small></div></div></div>
+        <button class="primary-button" id="addStudentBtn">＋ Add demo student</button>
+      </article>
+    </section>
+    <footer>Libra Library Management System <span>Front-end demonstration • Data is sample data only</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
